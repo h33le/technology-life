@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="موقع شامل عن أهمية التقنية في حياتنا واستخداماتها وفوائدها وأضرارها وطرق الاستخدام الآمن.">
+<title>التقنية في حياتنا</title>
+<style>
+:root{--bg:#09090f;--panel:#12121c;--panel2:#191827;--purple:#a987ff;--purple2:#7649d3;--white:#faf9ff;--muted:#c0bdcc;--line:#332d45}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:99;background:rgba(9,9,15,.97);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;min-height:72px;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:1.1rem;font-weight:900;white-space:nowrap}.logo span{color:var(--purple)}
+nav{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+nav a{display:block;color:#d1cddd;padding:8px 10px;border-radius:10px;font-size:.84rem;transition:.2s}
+nav a:hover,nav a:focus{background:#a987ff25;color:#fff;outline:1px solid #a987ff66}
+.menu{display:none;background:#201b2d;border:1px solid #51416e;color:white;padding:8px 12px;border-radius:10px}
+.hero{max-width:1200px;margin:auto;padding:66px 22px 45px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;min-height:520px}
+.kicker{color:#c9b5ff;font-weight:bold;font-size:.9rem}
+h1,h2,h3{letter-spacing:0}
+h1{font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.3;margin:12px 0}
+h1 span{color:var(--purple)}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 19px;border-radius:12px;font-weight:bold;border:1px solid #9b78ed;transition:.2s}
+.btn.primary{background:linear-gradient(120deg,#c0a8ff,#875ce4);color:#100b1b}
+.btn.secondary{background:#ffffff09;color:#f5efff;border-color:#62517d}
+.btn:hover{transform:translateY(-3px);box-shadow:0 9px 25px #8c65e744}
+.hero-art{height:360px;border:1px solid #4b3b68;border-radius:28px;background:radial-gradient(circle at 50% 45%,#4c3377,#211a33 48%,#11111a 78%);display:grid;place-items:center;position:relative;overflow:hidden}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #c7aaff55;border-radius:50%;width:280px;height:280px}
+.hero-art:after{width:215px;height:215px;border-style:dashed}
+.tech-symbol{width:145px;height:145px;border-radius:38px;background:linear-gradient(145deg,#d0bdff,#8153de);display:grid;place-items:center;color:#201334;font-size:5rem;box-shadow:0 0 70px #a987ff88;z-index:2}
+.float{position:absolute;background:#171323;border:1px solid #7d61a8;padding:7px 12px;border-radius:12px;color:#eee5ff;font-size:.9rem;z-index:3}
+.f1{top:15%;right:8%}.f2{bottom:17%;left:7%}.f3{bottom:13%;right:12%}
+.quick{max-width:1150px;margin:0 auto;padding:5px 22px 55px}
+.quick h2{text-align:center;font-size:1.3rem;margin:0 0 18px}
+.quick-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}
+.quick a{background:linear-gradient(145deg,#211b30,#13121b);border:1px solid #403452;border-radius:15px;padding:15px 9px;text-align:center;transition:.2s}
+.quick a:hover{border-color:var(--purple);transform:translateY(-4px);background:#28203b}
+.quick b{display:block;font-size:.9rem}.quick i{font-style:normal;font-size:1.5rem;display:block;margin-bottom:5px}
+section{padding:66px 22px;scroll-margin-top:82px}
+.wrap{max-width:1120px;margin:auto}
+.section-head{text-align:center;max-width:760px;margin:0 auto 32px}
+.section-head small{color:#bfa8ff;font-weight:bold}
+.section-head h2{font-size:clamp(1.8rem,3vw,2.55rem);margin:4px 0 8px}
+.section-head p{color:var(--muted);margin:0}
+.dark-band{background:linear-gradient(120deg,#171323,#101018);border-block:1px solid #30283f}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:linear-gradient(145deg,#1c1a29,#12121a);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.22s}
+.card:hover{transform:translateY(-4px);border-color:#8065b3;box-shadow:0 15px 35px #0005}
+.icon{width:48px;height:48px;border-radius:14px;background:#33264a;color:#e1d2ff;display:grid;place-items:center;font-size:1.45rem;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:1.08rem}.card p{margin:0;color:#c0bdca;font-size:.94rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.panel{background:linear-gradient(145deg,#211a30,#14121d);border:1px solid #4c3a68;border-radius:20px;padding:25px}
+.panel h3{margin-top:0}.panel p{color:var(--muted)}
+.list{padding:0 22px 0 0;margin:10px 0;color:#cfccd8}.list li{margin:8px 0}
+.note{background:#a987ff17;border-right:3px solid var(--purple);border-radius:0 10px 10px 0;padding:12px 15px;color:#e2d6ff;margin-top:17px}
+.use-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.use{display:flex;gap:13px;background:#191824;border:1px solid #363044;padding:17px;border-radius:15px}
+.use .icon{flex:0 0 46px;margin:0;width:46px;height:46px}.use h3{margin:0 0 3px;font-size:1rem}.use p{margin:0;color:var(--muted);font-size:.9rem}
+.two-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bad{border-color:#684052}.good{border-color:#3a654f}
+.label{display:inline-block;padding:3px 11px;border-radius:30px;font-size:.8rem;margin-bottom:8px}
+.label.red{background:#442431;color:#ffc0d0}.label.green{background:#1d3b2e;color:#a8efc4}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.step{background:#191824;border:1px solid #383149;border-radius:15px;padding:19px}
+.step strong{display:block;font-size:1.4rem;color:#c7b0ff;margin-bottom:7px}.step h3{font-size:1rem;margin:0 0 5px}.step p{color:var(--muted);font-size:.89rem;margin:0}
+.wide-quote{border:1px solid #564174;background:radial-gradient(circle at center,#2c2042,#14121b);border-radius:20px;padding:28px;text-align:center;margin-top:24px}
+.wide-quote p{font-size:1.35rem;font-weight:bold;margin:0 0 5px}.wide-quote span{color:var(--muted)}
+.quiz{max-width:760px;margin:auto;background:#191824;border:1px solid #403750;border-radius:20px;padding:25px}
+.quiz-meta{display:flex;justify-content:space-between;color:#cbb7ff;font-size:.9rem}
+.progress{height:7px;background:#342d43;border-radius:10px;margin:13px 0 20px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#8155dc,#c6adff);width:0}
+#question{font-weight:bold;font-size:1.13rem;margin-bottom:14px}
+.answer{display:block;width:100%;text-align:right;background:#111119;color:white;border:1px solid #3c354b;padding:11px 14px;border-radius:11px;margin:8px 0;cursor:pointer}
+.answer:hover:not(:disabled){border-color:#b092ff}.answer.correct{background:#173829;border-color:#51b982}.answer.wrong{background:#42212d;border-color:#d66d8a}
+#feedback{color:#d8c7ff;min-height:35px;margin-top:10px}
+.quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+footer{text-align:center;padding:28px 15px;border-top:1px solid var(--line);color:#aaa5b5;font-size:.9rem}
+.top{position:fixed;bottom:18px;left:18px;border:0;background:#b99cff;color:#160e25;width:44px;height:44px;border-radius:13px;font-size:1.3rem;cursor:pointer;display:none;z-index:50}
+@media(max-width:980px){nav a{font-size:.76rem;padding:7px}.quick-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.nav{flex-wrap:wrap}.menu{display:block}nav{display:none;position:absolute;top:69px;right:12px;left:12px;background:#171520;border:1px solid #4a3b60;border-radius:14px;padding:12px;flex-direction:column;align-items:stretch;box-shadow:0 14px 35px #0009}nav.open{display:flex}nav a{font-size:.9rem;padding:9px}.hero{grid-template-columns:1fr;padding-top:45px}.hero-art{height:270px}.grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hero{padding-inline:17px}.hero-art{height:235px}.tech-symbol{width:120px;height:120px;font-size:4rem}.quick{padding-inline:15px}.quick-grid{grid-template-columns:repeat(2,1fr)}section{padding:52px 17px}.grid,.use-grid,.two-cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.card{padding:19px}.quiz{padding:18px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a class="logo" href="#home">عالم <span>التقنية</span></a>
+  <button class="menu" id="menu" type="button">☰ الأقسام</button>
+  <nav id="nav">
+   <a href="#home">الرئيسية</a><a href="#definition">مفهوم التقنية</a><a href="#importance">أهميتها</a><a href="#daily">في حياتنا</a><a href="#benefits">فوائدها</a><a href="#harms">أضرارها</a><a href="#safe">الاستخدام الآمن</a><a href="#quiz">اختبار</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div>
+  <div class="kicker">التقنية تغيّر طريقة عيشنا وتعلّمنا وعملنا</div>
+  <h1>التقنية في <span>حياتنا</span><br>فرصٌ تصنع المستقبل</h1>
+  <p>لم تعد التقنية شيئًا نستخدمه من وقت لآخر، بل أصبحت جزءًا من تفاصيل يومنا. نعتمد عليها في التواصل والتعلم والعمل والصحة والتسوق وحتى في إدارة منازلنا. في هذا الموقع نتعرف على أهميتها، وفوائدها، وأضرارها، وكيف نستفيد منها بطريقة ذكية ومتوازنة.</p>
+  <div class="buttons"><a class="btn primary" href="#importance">اكتشف أهمية التقنية ←</a><a class="btn secondary" href="#harms">تعرف على أضرارها</a></div>
+ </div>
+ <div class="hero-art"><span class="float f1">💡 المعرفة</span><span class="float f2">🌐 التواصل</span><span class="float f3">🚀 المستقبل</span><div class="tech-symbol">✧</div></div>
+</section>
+<div class="quick">
+ <h2>تصفّح مواضيع الموقع</h2>
+ <div class="quick-grid">
+  <a href="#definition"><i>💻</i><b>ما هي التقنية؟</b></a>
+  <a href="#importance"><i>⭐</i><b>أهميتها</b></a>
+  <a href="#daily"><i>📱</i><b>استخداماتها</b></a>
+  <a href="#benefits"><i>✨</i><b>كيف تساعدنا؟</b></a>
+  <a href="#harms"><i>⚠️</i><b>أضرارها</b></a>
+  <a href="#safe"><i>🛡️</i><b>كيف نستخدمها؟</b></a>
+ </div>
+</div>
+<section id="definition">
+ <div class="wrap">
+  <div class="section-head"><small>01 / التعريف</small><h2>ما هي التقنية؟</h2><p>التقنية هي استخدام المعرفة والمهارات والأدوات والأنظمة لإيجاد حلول للمشكلات، وتسهيل المهام، وتحسين حياة الإنسان.</p></div>
+  <div class="split">
+   <div class="panel"><h3>التقنية أوسع من الهاتف والحاسوب</h3><p>قد تكون التقنية جهازًا نستخدمه، أو برنامجًا يساعدنا، أو نظامًا ينظم البيانات، أو طريقة حديثة لإنجاز العمل. وتشمل التقنيات البسيطة والمتقدمة، من الآلات والأجهزة الطبية إلى الإنترنت والذكاء الاصطناعي.</p><p>ومع تطورها، أصبح بإمكاننا الوصول إلى المعلومات بسرعة، والتواصل مع الآخرين مهما بعدت المسافات، وإنجاز كثير من الأعمال دون الحاجة إلى الحضور الشخصي.</p><div class="note">التقنية ليست غاية بحد ذاتها؛ قيمتها الحقيقية تظهر عندما نستخدمها لحل مشكلة أو تلبية حاجة.</div></div>
+   <div class="panel"><h3>أمثلة على التقنية حولنا</h3><ul class="list"><li>الهاتف الذكي لإجراء المكالمات والتصوير واستخدام التطبيقات.</li><li>الحاسوب لإنجاز الأعمال والتصميم والبرمجة والتعلم.</li><li>الإنترنت للوصول إلى المعرفة والخدمات والتواصل.</li><li>أجهزة الاستشعار لمراقبة الحرارة والحركة والصحة.</li><li>أنظمة الدفع الإلكتروني لتسهيل عمليات الشراء والتحويل.</li><li>الروبوتات لتنفيذ مهام دقيقة أو متكررة.</li></ul></div>
+  </div>
+ </div>
+</section>
+<section class="dark-band" id="importance">
+ <div class="wrap">
+  <div class="section-head"><small>02 / الأهمية</small><h2>أهمية التقنية في حياتنا</h2><p>تسهم التقنية في تطوير المجتمع ورفع جودة الحياة، وتمنح الأفراد والمؤسسات طرقًا جديدة للتعلم والإنتاج والتواصل.</p></div>
+  <div class="grid">
+   <article class="card"><div class="icon">⏱️</div><h3>توفير الوقت والجهد</h3><p>تختصر الخدمات الرقمية خطوات كثيرة؛ فيمكن دفع الفواتير، وحجز المواعيد، وتجديد بعض الخدمات، وشراء الاحتياجات عبر الإنترنت بدل التنقل والانتظار.</p></article>
+   <article class="card"><div class="icon">🌍</div><h3>سهولة التواصل</h3><p>تسمح تطبيقات الاتصال ومكالمات الفيديو بالتواصل الفوري مع العائلة والأصدقاء وزملاء العمل في أي مكان، كما تسهّل التعاون بين الفرق.</p></article>
+   <article class="card"><div class="icon">📚</div><h3>تطوير التعليم</h3><p>توفر الدروس الإلكترونية والمكتبات الرقمية والدورات عن بُعد، وتساعد الطالب على إعادة الشرح والبحث والتعلم وفق سرعته واحتياجه.</p></article>
+   <article class="card"><div class="icon">🩺</div><h3>دعم الصحة</h3><p>تساعد الأنظمة الطبية في حفظ الملفات وتنظيم المواعيد، وتدعم الأجهزة الحديثة متابعة المؤشرات الصحية، كما تسهم التقنيات في تحسين الفحص والعلاج.</p></article>
+   <article class="card"><div class="icon">💼</div><h3>تطوير العمل والاقتصاد</h3><p>تساعد المؤسسات على إدارة المشاريع والموظفين والمخزون، وتفتح مجالات للتجارة الإلكترونية والعمل عن بُعد والوظائف الرقمية.</p></article>
+   <article class="card"><div class="icon">🌱</div><h3>حل المشكلات وخدمة المجتمع</h3><p>تساعد التقنية على مراقبة البيئة، وتحسين استهلاك الطاقة والمياه، وتحليل البيانات لفهم التحديات واختيار حلول أكثر كفاءة.</p></article>
+  </div>
+ </div>
+</section>
+<section id="daily">
+ <div class="wrap">
+  <div class="section-head"><small>03 / التطبيقات اليومية</small><h2>كيف نستخدم التقنية في مجالات الحياة؟</h2><p>تدخل التقنية في معظم القطاعات، ولكل مجال أدواته التي تساعد على تحسين الخدمات والنتائج.</p></div>
+  <div class="grid">
+   <article class="card"><div class="icon">🎓</div><h3>التعليم</h3><p>المنصات التعليمية، الفصول الافتراضية، الكتب الرقمية، الاختبارات الإلكترونية، وبرامج إعداد العروض والبحوث.</p></article>
+   <article class="card"><div class="icon">🏥</div><h3>الصحة</h3><p>حجز المواعيد، الاستشارات عن بُعد، السجلات الصحية الإلكترونية، أجهزة قياس النشاط، وتقنيات التصوير الطبي.</p></article>
+   <article class="card"><div class="icon">🏠</div><h3>المنزل</h3><p>التحكم بالإضاءة والتكييف، كاميرات المراقبة، الأجهزة المنزلية الذكية، وتنظيم قوائم التسوق والمهام.</p></article>
+   <article class="card"><div class="icon">🏦</div><h3>المال والتجارة</h3><p>المحافظ الرقمية، التحويلات البنكية، المتاجر الإلكترونية، تتبع الطلبات، ومقارنة الأسعار والمنتجات.</p></article>
+   <article class="card"><div class="icon">🚘</div><h3>النقل والمواصلات</h3><p>تطبيقات الخرائط، تحديد المواقع، معرفة الازدحام، حجز الرحلات، وتتبع وسائل النقل والشحنات.</p></article>
+   <article class="card"><div class="icon">🎭</div><h3>الإعلام والترفيه</h3><p>مشاهدة المحتوى والاستماع للموسيقى والألعاب الرقمية والتصميم وصناعة المحتوى ومشاركته.</p></article>
+  </div>
+ </div>
+</section>
+<section class="dark-band" id="benefits">
+ <div class="wrap split">
+  <div><div class="section-head" style="text-align:right;margin:0 0 20px"><small>04 / الفوائد</small><h2>كيف تساعدنا التقنية؟</h2><p>عندما نختار الأداة المناسبة ونستخدمها لهدف واضح، يمكن أن تجعل حياتنا أكثر تنظيمًا ومرونة.</p></div>
+   <ul class="list"><li>تساعدنا على الوصول إلى المعلومات بسرعة ومن مصادر متعددة.</li><li>تتيح التعلم الذاتي وتطوير المهارات في أي وقت.</li><li>تسهل إنجاز الأعمال والتعاون من أماكن مختلفة.</li><li>تمنح ذوي الإعاقة أدوات مساعدة للوصول والتواصل.</li><li>تساعد على تنظيم البيانات وتحليلها ودعم اتخاذ القرار.</li><li>تفتح فرصًا للمشاريع والابتكار وتقديم خدمات جديدة.</li></ul>
+  </div>
+  <div class="panel"><h3>مثال عملي: كيف تساعد التقنية طالبة؟</h3><p>لدى طالبة اختبار في مادة صعبة. تستطيع مشاهدة شرح تعليمي، والبحث عن معنى مصطلح، وتنظيم جدول المراجعة في تطبيق، والتواصل مع زميلاتها، ثم حل اختبار إلكتروني لمعرفة النقاط التي تحتاج إلى مراجعتها.</p><p>بهذه الطريقة لا تقوم التقنية بالتعلم بدلًا عنها، لكنها توفر لها أدوات تساعدها على الفهم وتنظيم الوقت وقياس تقدمها.</p><div class="note">أفضل استخدام للتقنية هو الذي يعزز قدرات الإنسان ويساعده، لا الذي يلغي تفكيره أو اعتماده على نفسه.</div></div>
+ </div>
+</section>
+<section id="harms">
+ <div class="wrap">
+  <div class="section-head"><small>05 / التحديات والأضرار</small><h2>ما أضرار التقنية عند استخدامها بشكل خاطئ؟</h2><p>التقنية مفيدة، لكن الإفراط في استخدامها أو إهمال الأمان والخصوصية قد يؤدي إلى مشكلات صحية واجتماعية وأمنية.</p></div>
+  <div class="two-cards">
+   <article class="card bad"><span class="label red">الصحة والنوم</span><h3>الإفراط في استخدام الشاشات</h3><p>قد يسبب الاستخدام الطويل دون راحة إجهاد العين والصداع وقلة الحركة، كما أن استخدام الهاتف قبل النوم قد يؤثر في جودة النوم لدى بعض الأشخاص.</p></article>
+   <article class="card bad"><span class="label red">الخصوصية</span><h3>كشف المعلومات الشخصية</h3><p>نشر العنوان أو رقم الهاتف أو الصور أو الموقع دون انتباه قد يعرض الشخص لاستغلال معلوماته أو انتهاك خصوصيته.</p></article>
+   <article class="card bad"><span class="label red">الأمن الرقمي</span><h3>الاحتيال والاختراق</h3><p>الروابط المزيفة والرسائل التي تنتحل صفة جهات موثوقة وكلمات المرور الضعيفة قد تؤدي إلى سرقة الحسابات أو البيانات أو الأموال.</p></article>
+   <article class="card bad"><span class="label red">العلاقات الاجتماعية</span><h3>ضعف التواصل الواقعي</h3><p>الانشغال المستمر بالهاتف أثناء الجلسات قد يقلل الحوار المباشر ويؤثر في جودة الوقت مع العائلة والأصدقاء.</p></article>
+   <article class="card bad"><span class="label red">المعلومات</span><h3>الشائعات والمعلومات المضللة</h3><p>يمكن نشر الأخبار غير الصحيحة بسرعة عبر المنصات، لذلك يجب التأكد من المصدر والتاريخ والأدلة قبل تصديق أي معلومة أو إعادة نشرها.</p></article>
+   <article class="card bad"><span class="label red">التركيز والمهارات</span><h3>التشتت والاعتماد الزائد</h3><p>الإشعارات والتنقل بين التطبيقات قد يشتتان الانتباه، والاعتماد الكامل على الأدوات قد يقلل ممارسة التفكير والبحث وحل المشكلات.</p></article>
+  </div>
+ </div>
+</section>
+<section class="dark-band" id="safe">
+ <div class="wrap">
+  <div class="section-head"><small>06 / الاستخدام الواعي</small><h2>كيف نستخدم التقنية بطريقة صحيحة وآمنة؟</h2><p>نستفيد من التقنية أكثر عندما نستخدمها بتوازن ونحمي بياناتنا ونتعامل مع المعلومات بمسؤولية.</p></div>
+  <div class="steps">
+   <article class="step"><strong>01</strong><h3>نظّم وقتك</h3><p>حدد أوقاتًا للدراسة والراحة والنوم، وخذ فترات استراحة من الشاشة وتحرك بانتظام.</p></article>
+   <article class="step"><strong>02</strong><h3>احمِ حساباتك</h3><p>استخدم كلمات مرور قوية ومختلفة، وفعّل التحقق بخطوتين، ولا تشارك رموز الدخول.</p></article>
+   <article class="step"><strong>03</strong><h3>تحقق قبل النشر</h3><p>راجع مصدر المعلومة وتاريخها، ولا تفتح الروابط المشبوهة أو ترسل بياناتك لجهة مجهولة.</p></article>
+   <article class="step"><strong>04</strong><h3>احترم الآخرين</h3><p>لا تنشر صور أو معلومات الآخرين دون إذن، واحترم حقوق الملكية وآداب التواصل.</p></article>
+  </div>
+  <div class="wide-quote"><p>التقنية أداة قوية، والوعي هو ما يجعل استخدامها آمنًا ومفيدًا.</p><span>وازن بين حياتك الرقمية وحياتك الواقعية</span></div>
+ </div>
+</section>
+<section id="quiz">
+ <div class="wrap">
+  <div class="section-head"><small>07 / اختبر معلوماتك</small><h2>ماذا تعلمت عن التقنية؟</h2><p>اختر الإجابة الصحيحة لكل سؤال، ثم شاهد نتيجتك وتفسير الإجابة.</p></div>
+  <div class="quiz">
+   <div class="quiz-meta"><span id="count">السؤال 1 من 6</span><span id="score">النتيجة: 0</span></div><div class="progress"><span id="bar"></span></div>
+   <div id="question"></div><div id="answers"></div><div id="feedback" aria-live="polite"></div>
+   <div class="quiz-actions"><button class="btn secondary" id="restart" style="display:none">إعادة الاختبار</button><button class="btn primary" id="next" disabled>التالي ←</button></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer>التقنية في حياتنا — محتوى تعليمي للتوعية بأهمية التقنية وفوائدها وتحدياتها والاستخدام المسؤول لها<br>© 2026</footer>
+<button class="top" id="top" aria-label="العودة للأعلى">↑</button>
+<script>
+(function(){
+ const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+ menu.addEventListener('click',()=>nav.classList.toggle('open'));
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+ const top=document.getElementById('top');
+ window.addEventListener('scroll',()=>{top.style.display=window.scrollY>450?'block':'none'});
+ top.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ const qs=[
+  {q:'ما المقصود بالتقنية؟',a:['استخدام الأجهزة للترفيه فقط','توظيف المعرفة والأدوات لحل المشكلات وتسهيل الأعمال','استخدام الإنترنت دون هدف'],c:1,e:'التقنية تشمل الأدوات والأنظمة والمعرفة التي تساعد الإنسان على إنجاز المهام وحل المشكلات.'},
+  {q:'أي مما يلي مثال على فائدة التقنية في التعليم؟',a:['منصات تعليمية ودروس عن بُعد','منع الوصول للمصادر','إلغاء الحاجة إلى التفكير'],c:0,e:'المنصات الرقمية توسع فرص التعلم وتتيح الوصول إلى الدروس والمصادر.'},
+  {q:'أي من التالي قد يكون من أضرار الاستخدام المفرط للشاشات؟',a:['زيادة النشاط البدني','إجهاد العين واضطراب النوم','تحسين التركيز دائمًا'],c:1,e:'الجلوس الطويل واستخدام الشاشات دون راحة قد يؤثران في العين والنوم.'},
+  {q:'ما الطريقة الأفضل لحماية الحسابات؟',a:['مشاركة كلمة المرور','استخدام كلمة مرور قوية والتحقق بخطوتين','فتح كل الروابط'],c:1,e:'كلمة المرور القوية والتحقق بخطوتين يساعدان على حماية الحساب.'},
+  {q:'لماذا يجب التحقق من الأخبار قبل نشرها؟',a:['لأن كل ما ينشر صحيح','لتقليل انتشار الشائعات والمعلومات المضللة','لزيادة عدد الرسائل'],c:1,e:'التحقق من المصدر والتاريخ يساعد على الحد من انتشار المعلومات الخاطئة.'},
+  {q:'ما أفضل وصف للاستخدام الواعي للتقنية؟',a:['استخدامها طوال اليوم','الابتعاد عنها تمامًا','الاستفادة منها مع التوازن وحماية الخصوصية'],c:2,e:'الاستخدام الواعي يعني الاستفادة من التقنية مع التوازن والأمان والمسؤولية.'}
+ ];
+ let index=0,points=0,locked=false;
+ const q=document.getElementById('question'),answers=document.getElementById('answers'),feedback=document.getElementById('feedback'),next=document.getElementById('next'),restart=document.getElementById('restart');
+ function render(){
+  locked=false;const item=qs[index];document.getElementById('count').textContent='السؤال '+(index+1)+' من '+qs.length;document.getElementById('score').textContent='النتيجة: '+points;document.getElementById('bar').style.width=(index/qs.length*100)+'%';q.textContent=item.q;answers.innerHTML='';feedback.textContent='';next.disabled=true;next.textContent=index===qs.length-1?'عرض النتيجة':'التالي ←';
+  item.a.forEach((answer,i)=>{const button=document.createElement('button');button.type='button';button.className='answer';button.textContent=answer;button.addEventListener('click',()=>choose(i,button));answers.appendChild(button)});
+ }
+ function choose(choice,button){
+  if(locked)return;locked=true;const item=qs[index];
+  Array.from(answers.children).forEach((el,i)=>{el.disabled=true;if(i===item.c)el.classList.add('correct')});
+  if(choice===item.c){points++;feedback.textContent='إجابة صحيحة! '+item.e}else{button.classList.add('wrong');feedback.textContent='الإجابة الصحيحة موضحة باللون الأخضر. '+item.e}
+  document.getElementById('score').textContent='النتيجة: '+points;next.disabled=false;
+ }
+ next.addEventListener('click',()=>{
+  if(index<qs.length-1){index++;render();return}
+  document.getElementById('count').textContent='اكتمل الاختبار';document.getElementById('bar').style.width='100%';q.textContent='نتيجتك '+points+' من '+qs.length;answers.innerHTML='';feedback.textContent=points===qs.length?'ممتاز! إجاباتك كلها صحيحة 👏':'أحسنت المحاولة! راجع الأقسام وحاول مرة أخرى.';next.style.display='none';restart.style.display='inline-flex';
+ });
+ restart.addEventListener('click',()=>{index=0;points=0;next.style.display='inline-flex';restart.style.display='none';render()});
+ render();
+})();
+</script>
+</body>
+</html>
